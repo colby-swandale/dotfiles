@@ -1,0 +1,9 @@
+[user]
+  name = Colby Swandale
+  email = me@colby.fyi
+
+[credential]
+  helper = osxkeychain
+
+[hub]
+  protocol = https
