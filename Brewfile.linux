@@ -1,0 +1,5 @@
+brew "zsh"
+brew "git"
+brew "tig"
+brew "stow"
+brew "zplug"
