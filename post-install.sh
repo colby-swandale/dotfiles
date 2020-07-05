@@ -16,6 +16,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # $DOCKUTIL --add /Applications/Bear.app
   # $DOCKUTIL --add '~/Downloads' --view grid --display folder
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
   stow zsh git asdf
   chsh -s $(which zsh)
 fi
