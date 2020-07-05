@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-STOW=/usr/local/bin/stow 
-DOCKUTIL=/usr/local/bin/dockutil
+STOW="$(brew --prefix)/bin/stow"
+DOCKUTIL="$(brew --prefix)/bin/dockutil"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   stow zsh git asdf ssh hyper
