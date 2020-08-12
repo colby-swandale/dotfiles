@@ -14,7 +14,6 @@ fpath+="$HOME/.zsh-autocomplete"
 alias cat='bat'
 alias ping='prettyping'
 alias help='tldr'
-alias ktmux='tmux kill-server'
 alias be='bundle exec'
 alias c='clear'
 alias l='ls -la'
@@ -25,5 +24,6 @@ alias .....='cd ../../..'
 alias ls='exa'
 alias du='ncdu'
 alias cask='brew cask'
+alias g='git'
 
 function reload { source ~/.zshrc }
