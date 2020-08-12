@@ -15,9 +15,17 @@ module.exports = {
 
     shell: "/usr/local/bin/zsh",
 
-    hyperMonokaiPro: {
-      theme: "octagon"
+    hypest: {
+      borders: true,
+      vibrancy: false,
+      darkmode: false,
     }
   },
-  plugins: ["hyper-monokai-pro"]
+  plugins: [
+    "hyper-hypest",
+    "hyper-tab-icons",
+    "hyper-highlight-active-pane",
+    "hyper-statusline",
+    "hyper-search"
+  ]
 }
