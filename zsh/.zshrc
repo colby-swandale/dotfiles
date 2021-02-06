@@ -1,10 +1,12 @@
+export PATH="/opt/homebrew/bin:$PATH"
+
 source $ZPLUG_SRC/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
-
+ 
 zplug "modules/completion", from:prezto
 zplug "modules/history", from:prezto
-
+ 
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "sindresorhus/pure", use:"{async.zsh,pure.zsh}", from:github, as:theme
 zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd64*", rename-to:fzf

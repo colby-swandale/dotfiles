@@ -13,12 +13,12 @@ module.exports = {
 
     copyOnSelect: true,
 
-    shell: "/usr/local/bin/zsh",
+    shell: "/opt/homebrew/bin/zsh",
 
     hypest: {
       borders: true,
       vibrancy: false,
-      darkmode: false,
+      darkmode: true,
     }
   },
   plugins: [

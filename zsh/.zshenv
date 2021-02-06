@@ -1,4 +1,4 @@
-export ZPLUG_SRC=/usr/local/opt/zplug
+export ZPLUG_SRC=/opt/homebrew/opt/zplug
 export ZPLUG_HOME=$HOME/.zplug
 export ZPLUG_BIN=$ZPLUG_HOME/bin
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -21,9 +21,9 @@ alias ..='cd ../'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../..'
+alias edit='code ~/.dotfiles'
 alias ls='exa'
 alias du='ncdu'
-alias cask='brew cask'
 alias g='git'
 
 function reload { source ~/.zshrc }
