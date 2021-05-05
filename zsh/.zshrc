@@ -8,13 +8,15 @@ zplug "modules/completion", from:prezto
 zplug "modules/history", from:prezto
  
 zplug "b4b4r07/enhancd", use:init.sh
-zplug "sindresorhus/pure", use:"{async.zsh,pure.zsh}", from:github, as:theme
 zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd64*", rename-to:fzf
 zplug "junegunn/fzf"
 zplug "asdf-vm/asdf", use:asdf.sh
+zplug "starship/starship", from:gh-r, as:command, use: "*darwin*amd64*"
 
 if ! zplug check; then
   zplug install
 fi
 
 zplug load
+
+eval "$(starship init zsh)"
