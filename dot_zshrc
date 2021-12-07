@@ -1,0 +1,27 @@
+
+BREW_PATH="$(find_brew_path)"
+export ZPLUG_SRC="$($BREW_PATH --prefix)/opt/zplug"
+export ZPLUG_HOME=$HOME/.zplug
+export ZPLUG_BIN=$ZPLUG_HOME/bin
+
+source $ZPLUG_SRC/init.zsh
+eval "$($BREW_PATH shellenv)"
+
+zplug "plugins/git", from:oh-my-zsh
+ 
+zplug "modules/completion", from:prezto
+zplug "modules/history", from:prezto
+ 
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd64*", rename-to:fzf
+zplug "junegunn/fzf"
+zplug "asdf-vm/asdf", use:"{asdf.sh,completions/_asdf}"
+
+if ! zplug check; then
+  zplug install
+fi
+
+zplug load
+
+eval "$(op completion zsh)"; compdef _op op
+eval "$(starship init zsh)"

@@ -1,0 +1,72 @@
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_INSTALL_FROM_API=1
+export ENHANCD_DISABLE_DOT=1
+export NVM_DID=$HOME/.nvm
+export NODEJS_CHECK_SIGNATURES=no
+export FZF_DEFAULT_COMMAND='fd'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export PGHOST=127.0.0.1
+
+fpath+="$HOME/.zsh-autocomplete"
+
+alias cat='bat'
+alias du='dust'
+alias ps='procs'
+alias ping='prettyping'
+alias help='tldr'
+alias be='bundle exec'
+alias c='clear'
+alias l='ls -la'
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../..'
+alias edit='code ~/.dotfiles'
+alias ls='exa'
+alias du='ncdu'
+alias g='git'
+
+function reload { source ~/.zshrc }
+function find_brew_path() {
+  if [[ -d /opt/homebrew ]]; then
+    echo /opt/homebrew/bin/brew
+  elif [[ -f /usr/local/bin/brew ]]; then
+    echo /usr/local/bin/brew
+  elif [[ -f "$HOME/.linuxbrew" ]]; then
+    echo "$HOME/.linuxbrew/bin/brew"
+  else
+    echo "(shrug)"
+  fi
+}
+
+function pass() {
+  if [[ -z "$1" ]] || [[ -z "$2" ]]; then
+    echo "Usage: pass <item|document|totp> <name>"
+    return 1
+  fi
+
+  MODE=$1
+  ITEM_NAME=$2
+
+  if [[ -z "$OP_SESSION_my" ]]; then
+    EXISTING_SESSION=$(security find-generic-password -a "${USER}" -s 1password-cli -l 1password-cli-session -w)
+    eval $(op signin my --session "${EXISTING_SESSION}")
+  fi
+
+  if [[ $? > 0 ]]; then
+    echo "Couldn't sign to 1password CLI"
+    return 1
+  else
+    security add-generic-password -a "${USER}" -l 1password-cli-session -s 1password-cli -w "${OP_SESSION_my}" -U
+  fi
+
+  ITEM=$(op get $MODE $ITEM_NAME 2>&1)
+
+  if [[ $MODE == "item" ]]; then
+    SECRET=$(echo $ITEM | jq -r '.details.fields[] | select(.name == "password") | .value')
+    echo $SECRET | pbcopy
+    echo "Password copied to the clipboard"
+  elif [[ $MODE == "document" ]]; then
+    echo $ITEM
+  fi
+}

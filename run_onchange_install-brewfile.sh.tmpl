@@ -1,0 +1,65 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "heroku/brew"
+tap "cli/cli", "https://github.com/cli/cli"
+tap "aws/tap"
+
+brew "zsh"
+brew "git"
+brew "tig" 
+brew "stow"
+brew "zplug"
+brew "jq"
+brew "htop"
+brew "nmap"
+brew "ripgrep"
+brew "dockutil"
+brew "mas"
+brew "bat"
+brew "prettyping"
+brew "tldr"
+brew "httpie"
+brew "ncdu"
+brew "noti"
+brew "gist"
+brew "exa"
+brew "dcraw"
+brew "node"
+brew "hub"
+brew "yarn"
+brew "heroku"
+brew "curl"
+brew "fd"
+brew "procs"
+brew "starship"
+brew "svn"
+brew "aws-sam-cli"
+brew "gh"
+cask "1password-cli"
+cask "font-cascadia-code"
+cask "notion"
+cask "google-chrome"
+cask "slack"
+cask "rectangle"
+cask "iina"
+cask "1password"
+cask "tableplus"
+cask "iterm2"
+cask "visual-studio-code"
+cask "cleanmymac"
+cask "docker"
+cask "tower"
+cask "insomnia"
+cask "sizzy"
+cask "zoom"
+
+mas "Keynote", id: 409183694
+mas "Pixelmator Pro", id: 1289583905
+mas "The Unarchiver", id: 425424353
+mas "Tailscale", id: 1475387142
+EOF
+{{ end -}}
