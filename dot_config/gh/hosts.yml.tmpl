@@ -1,0 +1,4 @@
+github.com:
+    user: {{ .github.user | quote }}
+    oauth_token: {{ keyring "github" .github.user | quote }}
+    git_protocol: https

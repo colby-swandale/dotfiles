@@ -6,6 +6,7 @@ export NODEJS_CHECK_SIGNATURES=no
 export FZF_DEFAULT_COMMAND='fd'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PGHOST=127.0.0.1
+export EDITOR="code --wait"
 
 fpath+="$HOME/.zsh-autocomplete"
 

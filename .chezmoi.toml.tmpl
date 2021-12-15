@@ -1,0 +1,11 @@
+{{- $email := promptString "Email" -}}
+{{- $name := promptString "Name" -}}
+{{- $github := promptString "Github username" -}}
+
+[data]
+    email = {{ $email | quote }}
+    name = {{ $name | quote }}
+    github = {
+      user = {{ $github | quote }},
+      token = {{ keyring "github" .github.user | quote }}
+    }

@@ -1,6 +1,6 @@
 [user]
-  name = Colby Swandale
-  email = me@colby.fyi
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
 
 [credential]
   helper = osxkeychain
