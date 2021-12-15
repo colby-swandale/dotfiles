@@ -1,7 +1,3 @@
-{{- if (eq .chezmoi.os "darwin") -}}
-#!/bin/bash
-
-brew bundle --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "heroku/brew"
@@ -60,5 +56,3 @@ mas "Keynote", id: 409183694
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353
 mas "Tailscale", id: 1475387142
-EOF
-{{ end -}}

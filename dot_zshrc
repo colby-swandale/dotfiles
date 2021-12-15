@@ -1,27 +1,21 @@
 
 BREW_PATH="$(find_brew_path)"
-export ZPLUG_SRC="$($BREW_PATH --prefix)/opt/zplug"
-export ZPLUG_HOME=$HOME/.zplug
-export ZPLUG_BIN=$ZPLUG_HOME/bin
+source "$($BREW_PATH --prefix zinit)/zinit.zsh"
 
-source $ZPLUG_SRC/init.zsh
 eval "$($BREW_PATH shellenv)"
 
-zplug "plugins/git", from:oh-my-zsh
- 
-zplug "modules/completion", from:prezto
-zplug "modules/history", from:prezto
- 
-zplug "b4b4r07/enhancd", use:init.sh
-zplug "junegunn/fzf-bin", from:gh-r, as:command, use:"*darwin*amd64*", rename-to:fzf
-zplug "junegunn/fzf"
-zplug "asdf-vm/asdf", use:"{asdf.sh,completions/_asdf}"
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet PZT::modules/completion/init.zsh
+zinit snippet PZT::modules/history/init.zsh
 
-if ! zplug check; then
-  zplug install
-fi
+zinit ice lucid wait'!0' from"gh-r" as"program"
+zinit light junegunn/fzf-bin
 
-zplug load
+zinit ice pick"init.sh"
+zinit light b4b4r07/enhancd
 
-eval "$(op completion zsh)"; compdef _op op
+zinit ice lucid wait'!0' pick"asdf.sh"
+zinit light "asdf-vm/asdf"
+
+eval "$(op completion zsh)"
 eval "$(starship init zsh)"
