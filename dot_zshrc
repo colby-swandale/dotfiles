@@ -4,8 +4,11 @@ source "$($BREW_PATH --prefix zinit)/zinit.zsh"
 
 eval "$($BREW_PATH shellenv)"
 
+zinit ice wait
 zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit ice wait
 zinit snippet PZT::modules/completion/init.zsh
+zinit ice wait
 zinit snippet PZT::modules/history/init.zsh
 
 zinit ice lucid wait'!0' from"gh-r" as"program"

@@ -6,6 +6,5 @@
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     github = {
-      user = {{ $github | quote }},
-      token = {{ keyring "github" .github.user | quote }}
+      user = {{ $github | quote }}
     }
