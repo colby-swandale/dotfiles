@@ -1,7 +1,5 @@
-BREW_PATH="$(find_brew_path)"
-
-source "${ZSH_SNAP_PATH}/znap.zsh"
-eval "$($BREW_PATH shellenv)"
+source {{ .zsh_snap_path | quote }}
+eval "$({{ .brew_path }} shellenv)"
 
 znap source asdf-vm/asdf asdf.sh
 znap source b4b4r07/enhancd

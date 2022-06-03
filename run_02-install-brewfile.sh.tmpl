@@ -1,0 +1,7 @@
+#!/bin/bash
+
+BREW_PATH={{ .brew_path | quote }}
+
+if [[ -f "${BREW_PATH}" ]]; then
+  $BREW_PATH bundle --no-lock --file "$HOME/.Brewfile"
+fi
