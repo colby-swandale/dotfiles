@@ -1,24 +1,13 @@
-
 BREW_PATH="$(find_brew_path)"
-source "$($BREW_PATH --prefix zinit)/zinit.zsh"
 
+source "${ZSH_SNAP_PATH}/znap.zsh"
 eval "$($BREW_PATH shellenv)"
 
-zinit ice wait
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit ice wait
-zinit snippet PZT::modules/completion/init.zsh
-zinit ice wait
-zinit snippet PZT::modules/history/init.zsh
+znap source asdf-vm/asdf asdf.sh
+znap source b4b4r07/enhancd
+znap source MichaelAquilina/zsh-you-should-use
+znap source unixorn/tumult.plugin.zsh
+znap source marlonrichert/zsh-autocomplete
 
-zinit ice lucid wait'!0' from"gh-r" as"program"
-zinit light junegunn/fzf-bin
-
-zinit ice pick"init.sh"
-zinit light b4b4r07/enhancd
-
-zinit ice lucid wait'!0' pick"asdf.sh"
-zinit light "asdf-vm/asdf"
-
-eval "$(op completion zsh)"
-eval "$(starship init zsh)"
+znap eval starship 'starship init zsh'
+znap prompt

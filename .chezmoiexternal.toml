@@ -1,0 +1,6 @@
+[".zsh/zsh-snap"]
+  type = "archive"
+  url = "https://github.com/marlonrichert/zsh-snap/archive/refs/heads/main.zip"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "24h"

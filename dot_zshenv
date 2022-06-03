@@ -7,9 +7,11 @@ export FZF_DEFAULT_COMMAND='fd'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export PGHOST=127.0.0.1
 export EDITOR="code --wait"
+export ZSH_SNAP_PATH="${HOME}/.zsh/zsh-snap"
 
 fpath+="$HOME/.zsh-autocomplete"
 
+alias dc='docker compose'
 alias cat='bat'
 alias du='dust'
 alias ps='procs'
@@ -26,6 +28,7 @@ alias edit='code ~/.dotfiles'
 alias ls='exa'
 alias du='ncdu'
 alias g='git'
+alias k='kubectl'
 
 function reload { source ~/.zshrc }
 function find_brew_path() {
