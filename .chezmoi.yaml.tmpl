@@ -1,0 +1,16 @@
+{{- $email := promptString "Email" -}}
+{{- $name := promptString "Name" -}}
+{{- $github := promptString "Github" -}}
+
+data:
+    email: {{ $email | quote }}
+    name: {{ $name | quote }}
+    github:
+      user: {{ $github | quote }}
+    zsh_snap_path: "$HOME/.zsh/zsh-snap/znap.zsh"
+    one_password_ssh_agent_path: "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    {{- if eq .chezmoi.os "darwin" }}
+    brew_path: "/opt/homebrew/bin/brew"
+    {{- else if eq .chezmoi.os "linux" }}
+    brew_path: "$HOME/.linuxbrew/bin/brew"
+    {{- end }}
