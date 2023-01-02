@@ -1,10 +1,15 @@
 #!/bin/bash
 
 COMMAND_NAME="sudo-touchid"
-BIN_PATH="$({{ .brew_path }} --prefix ${COMMAND_NAME})/bin/${COMMAND_NAME}"
 
-if [[ -f $BIN_PATH ]]; then
-  eval $BIN_PATH
-else 
-  echo "sudo-touchid not found"
+{{- if eq .chezmoi.os "darwin" -}}
+
+# check if command installed
+if ! command -v "$COMMAND_NAME" &> /dev/null; then
+    echo "$COMMAND_NAME not installed"
+    exit 1
+else
+    echo "$COMMAND_NAME installed"
 fi
+
+{{ end -}}

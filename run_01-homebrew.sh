@@ -1,7 +1,16 @@
 #!/bin/bash
 
-set -eo pipefail
+set -e
+set -u
+set -o pipefail
 
-if ! command -v brew &> /dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# check if brew command is installed
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Installing Homebrew..."
+  # cache sudo password
+  sudo -v
+  # install homebrew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+else
+  echo "Homebrew is already installed"
 fi

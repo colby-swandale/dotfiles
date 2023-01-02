@@ -1,0 +1,54 @@
+tap "cli/cli", "https://github.com/cli/cli"
+
+brew "zsh"
+brew "git"
+brew "tig" # git cli
+brew "jq" # json
+brew "htop" # better top
+brew "nmap" # network scanner
+brew "ripgrep" # grep
+brew "mas" # mac app store
+brew "bat" # better cat
+brew "prettyping" # ping
+brew "tldr" # comand help
+brew "httpie" # http cli
+brew "ncdu" # disk usage
+brew "noti" # notifications
+brew "gist" # github gist
+brew "exa" # ls
+brew "fd" # find
+brew "procs" # ps
+brew "starship" # zsh prompt
+brew "gh" # github cli
+brew "fzf" # fuzzy finder
+
+{{- if eq .chezmoi.os "darwin" -}}
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+cask "1password-cli"
+cask "font-cascadia-code"
+cask "notion"
+cask "google-chrome"
+cask "slack"
+cask "rectangle"
+cask "iina"
+cask "1password"
+cask "tableplus"
+cask "iterm2"
+cask "visual-studio-code"
+cask "cleanmymac"
+cask "docker"
+cask "tower"
+cask "insomnia"
+cask "zoom"
+cask "sizzy"
+
+tap "artginzburg/tap" # sudo touch-id
+brew "sudo-touchid" # sudo with touch id
+
+mas "Pixelmator Pro", id: 1289583905
+mas "The Unarchiver", id: 425424353
+mas "Tailscale", id: 1475387142
+mas "NordVPN", id: 905953485
+{{ end -}}
