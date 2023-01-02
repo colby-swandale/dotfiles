@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: install.sh
+      - run: ./install.sh
 
       - name: chezmoi data
         run: '"$HOME/.local/bin/chezmoi" data'
