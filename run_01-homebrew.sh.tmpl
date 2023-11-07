@@ -4,8 +4,10 @@ set -e
 set -u
 set -o pipefail
 
+BREW_PATH={{ .brew_path | quote }}
+
 # check if brew command is installed
-if ! command -v brew >/dev/null 2>&1; then
+if [[ ! -f $BREW_PATH ]]; then
   echo "Installing Homebrew..."
   # cache sudo password
   sudo -v

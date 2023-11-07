@@ -1,2 +1,7 @@
 data:
   zsh_snap_path: "$HOME/.zsh/zsh-snap/znap.zsh"
+  {{- if eq .chezmoi.os "darwin" }}
+  brew_path: "/opt/homebrew/bin/brew"
+  {{- else if eq .chezmoi.os "linux" }}
+  brew_path: "$HOME/.linuxbrew/bin/brew"
+  {{- end }}
