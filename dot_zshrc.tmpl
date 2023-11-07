@@ -1,7 +1,6 @@
 source {{ .zsh_snap_path | quote }}
-eval "$({{ .brew_path }} shellenv)"
+eval "$(pkgx --shellcode)"
 
-znap source asdf-vm/asdf asdf.sh
 znap source b4b4r07/enhancd
 
 znap eval starship 'starship init zsh'
