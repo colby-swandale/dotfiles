@@ -1,15 +1,22 @@
-tap "pkgxdev/made"
-
-brew "pkgx"
-brew "fzf" # fuzzy finder
-
-{{- if eq .chezmoi.os "darwin" -}}
-
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
+brew "fzf" # fuzzy findertap "homebrew/cask"
+brew "exa"
+brew "tldr"
+brew "gh"
+brew "prettyping"
+brew "bat"
+brew "dust"
+brew "procs"
+brew "exa"
+brew "ncdu"
+brew "git"
+brew "starship"
+
+cask "orbstack"
 cask "1password-cli"
 cask "font-cascadia-code"
+cask "font-monaspace"
 cask "notion"
 cask "slack"
 cask "rectangle"
@@ -17,9 +24,13 @@ cask "iina"
 cask "1password"
 cask "tableplus"
 cask "visual-studio-code"
+cask "google-chrome"
 
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353
 mas "Tailscale", id: 1475387142
-
-{{ end -}}
+mas "Photomator", id: 1444636541
+mas "1Password for Safari", id: 1569813296
+mas "Noir", id: 1592917505
+mas "Kaigi for Safari", id: 1622835804
+mas "Swift Playgrounds", id: 1496833156

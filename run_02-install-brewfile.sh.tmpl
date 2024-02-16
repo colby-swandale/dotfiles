@@ -1,12 +1,4 @@
 #!/bin/bash
 
-BREW_PATH={{ .brew_path | quote }}
-
-# check if brew install installed
-if [ ! -f "$BREW_PATH" ]; then
-    echo "brew not installed"
-    exit 1
-fi
-
 # install Brewfile
 $BREW_PATH bundle --file="$HOME/.Brewfile"
