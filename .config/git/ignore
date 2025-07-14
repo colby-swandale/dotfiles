@@ -1,0 +1,11 @@
+.byebug_history
+.DS_Store
+*.log
+cache
+build
+dist
+logs
+node_modules
+images
+.bundle
+.devcontainer
