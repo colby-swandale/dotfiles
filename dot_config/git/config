@@ -1,0 +1,12 @@
+[credential]
+  helper = osxkeychain
+
+[alias]
+  s = status
+  d = diff
+  co = checkout
+  last = log -1 HEAD
+  nuke = reset --hard HEAD
+
+ [init]
+  defaultBranch = main
