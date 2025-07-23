@@ -1,7 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-
-# load homebrew into the current environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
-mise install
+brew bundle --global --cask
 {{ end -}}
