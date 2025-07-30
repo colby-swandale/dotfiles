@@ -9,6 +9,8 @@ brew "postgresql@17"
 brew "awscli"
 brew "fzf"
 brew "eza"
+brew "zoxide"
+brew "claude-code"
 
 cask "container"
 cask "font-cascadia-code"
