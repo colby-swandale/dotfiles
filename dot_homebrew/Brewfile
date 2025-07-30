@@ -11,6 +11,7 @@ brew "fzf"
 brew "eza"
 brew "zoxide"
 brew "claude-code"
+brew "gh"
 
 cask "container"
 cask "font-cascadia-code"
