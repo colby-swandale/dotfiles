@@ -1,0 +1,2 @@
+- always execute terraform commands through the mise exec command: `mise exec terraform@latest -- <command>`
+- when working on a feature or bugfix, prefer using git worktrees over branches in the main checkout. Use `gwt <branch-name> [base-branch]` to create a worktree and cd into it. Clean up with `git wtr <path>` when done.
