@@ -1,6 +1,7 @@
 [tools]
+ruby = "latest"
 node = "latest"
-'npm:@anthropic-ai/claude-code' = 'latest'
+rust = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = []
+idiomatic_version_file_enable_tools = ["ruby"]
