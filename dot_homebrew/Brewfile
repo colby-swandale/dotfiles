@@ -20,6 +20,8 @@ brew "neovim"
 brew "ripgrep"
 brew "tree-sitter-cli"
 brew "httpie"
+brew "jq"
+brew "curlie"
 brew "witr"
 brew "mole"
 
