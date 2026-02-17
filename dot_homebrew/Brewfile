@@ -11,6 +11,8 @@ brew "fzf"
 brew "eza"
 brew "zoxide"
 brew "gh"
+brew "lazygit"
+brew "tmux"
 
 cask "container"
 cask "font-cascadia-code"
