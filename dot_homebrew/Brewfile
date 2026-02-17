@@ -26,6 +26,7 @@ brew "witr"
 brew "mole"
 
 cask "font-cascadia-code"
+cask "font-caskaydia-cove-nerd-font"
 cask "visual-studio-code"
 cask "keyboardcleantool"
 cask "slack"
