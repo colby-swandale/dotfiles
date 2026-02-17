@@ -1,2 +1,4 @@
 - always execute terraform commands through the mise exec command: `mise exec terraform@latest -- <command>`
 - when working on a feature or bugfix, prefer using git worktrees over branches in the main checkout. Use `gwt <branch-name> [base-branch]` to create a worktree and cd into it. Clean up with `git wtr <path>` when done.
+- Ruby tooling (ruby-lsp, rubocop) should run through `mise exec` to respect per-project Ruby versions
+- dotfiles are managed with chezmoi; source dir is `~/.local/share/chezmoi`. After editing config files, run `chezmoi add <file>` to sync
