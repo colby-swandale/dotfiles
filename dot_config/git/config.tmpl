@@ -1,3 +1,6 @@
+[core]
+  pager = delta
+
 [credential]
   helper = osxkeychain
 
@@ -32,8 +35,23 @@
 [merge]
   conflictstyle = zdiff3
 
+[column]
+  ui = auto
+
+[branch]
+  sort = -committerdate
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  line-numbers = true
+  dark = true
+
 [diff]
   algorithm = histogram
+  colorMoved = default
 [user]
   email = {{ .email }}
   name = {{ .name }}
