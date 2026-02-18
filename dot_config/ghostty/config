@@ -1,4 +1,4 @@
-command = /opt/homebrew/bin/fish
+command = tmux new-session -A -s main
 shell-integration = fish
 theme = tokyonight
 font-family = CaskaydiaCove Nerd Font
