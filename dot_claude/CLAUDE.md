@@ -8,3 +8,8 @@
     respect per-project Ruby versions
 - dotfiles are managed with chezmoi; source dir is `~/.local/share/chezmoi`.
   - After editing config files, run `chezmoi add <file>` to sync
+
+## Containers
+- prefer Apple's `container` CLI over `docker` — it runs Linux containers as lightweight VMs on Apple silicon
+  - commands mirror Docker: `container build -t <name> .`, `container run --rm <image>`, `container images ls`, `container ls`
+  - uses OCI-compatible images — works with Docker Hub, GHCR, etc.
