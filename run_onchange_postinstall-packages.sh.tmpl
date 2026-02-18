@@ -1,5 +1,6 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
+# Brewfile hash: {{ include "dot_homebrew/Brewfile" | sha256sum }}
 eval "$(/opt/homebrew/bin/brew shellenv)"
-brew bundle --global --cask --no-upgrade
+brew bundle --global --no-upgrade
 {{ end -}}
