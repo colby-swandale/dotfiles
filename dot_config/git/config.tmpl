@@ -52,12 +52,21 @@
 [diff]
   algorithm = histogram
   colorMoved = default
+
 [user]
   email = {{ .email }}
   name = {{ .name }}
+	signingkey = /Users/colby/.ssh/id_ed25519_sk.pub
+
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	program = /opt/homebrew/bin/ssh-keygen

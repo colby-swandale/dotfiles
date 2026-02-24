@@ -5,6 +5,9 @@ zoxide init fish | source
 fzf --fish | source
 
 set fish_greeting
+
+# Use Homebrew's ssh-agent for FIDO2/YubiKey support
+eval (/opt/homebrew/opt/openssh/bin/ssh-agent -c)
 fish_add_path -m ~/bin
 fish_add_path -m ~/.local/bin
 fish_add_path -m /opt/homebrew/opt/trash/bin

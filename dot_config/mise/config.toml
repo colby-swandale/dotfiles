@@ -1,6 +1,5 @@
 [tools]
 ruby = "latest"
-node = "latest"
 rust = "latest"
 
 [settings]

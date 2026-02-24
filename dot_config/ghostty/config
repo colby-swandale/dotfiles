@@ -1,4 +1,26 @@
-command = tmux new-session -A -s main
+command = /opt/homebrew/bin/tmux new-session -A -s main
 shell-integration = fish
 theme = tokyonight
 font-family = CaskaydiaCove Nerd Font
+
+# Unbind Ghostty's default Cmd+number tab switching
+keybind = cmd+one=unbind
+keybind = cmd+two=unbind
+keybind = cmd+three=unbind
+keybind = cmd+four=unbind
+keybind = cmd+five=unbind
+keybind = cmd+six=unbind
+keybind = cmd+seven=unbind
+keybind = cmd+eight=unbind
+keybind = cmd+nine=unbind
+
+# Switch tmux windows with Cmd+number
+keybind = cmd+one=text:\x011
+keybind = cmd+two=text:\x012
+keybind = cmd+three=text:\x013
+keybind = cmd+four=text:\x014
+keybind = cmd+five=text:\x015
+keybind = cmd+six=text:\x016
+keybind = cmd+seven=text:\x017
+keybind = cmd+eight=text:\x018
+keybind = cmd+nine=text:\x019
