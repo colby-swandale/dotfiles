@@ -2,4 +2,6 @@ github.com:
     git_protocol: https
     users:
         colby-swandale:
+            skip_tls_verify: "true"
     user: colby-swandale
+    skip_tls_verify: "true"

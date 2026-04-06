@@ -1,4 +1,6 @@
 .byebug_history
+.opencode
+.claude
 .DS_Store
 *.log
 cache
