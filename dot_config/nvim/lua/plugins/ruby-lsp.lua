@@ -9,7 +9,7 @@ return {
       servers = {
         ruby_lsp = {
           mason = false,
-          cmd = { "mise", "exec", "--", "ruby-lsp" },
+          cmd = { "mise", "exec", "--", "gem", "exec", "ruby-lsp", "--beta" },
         },
         rubocop = {
           mason = false,

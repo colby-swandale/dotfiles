@@ -4,7 +4,6 @@ return {
     opts = {
       spec = {
         { "<leader>r", group = "rails" },
-        { "<leader>D", group = "docker" },
       },
     },
   },
