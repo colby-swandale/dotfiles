@@ -8,15 +8,15 @@ fish_add_path /opt/homebrew/opt/libpq/bin
 
 set fish_greeting
 
-# Use Homebrew's ssh-agent for FIDO2/YubiKey support
-set -e SSH_AUTH_SOCK
-eval (/opt/homebrew/opt/openssh/bin/ssh-agent -c) >/dev/null
 fish_add_path -m ~/bin
 fish_add_path -m ~/.local/bin
 fish_add_path -m /opt/homebrew/opt/trash/bin
 
 # Enable Claude Code LSP tool support
 set -gx ENABLE_LSP_TOOL 1
+
+set -gx EDITOR vim
+set -gx VISUAL vim
 
 # Abbreviations
 abbr -a ls 'eza --icons'

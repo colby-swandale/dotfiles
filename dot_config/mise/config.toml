@@ -1,7 +1,6 @@
 [tools]
+node = "lts"
 ruby = "latest"
-rust = "latest"
-node = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]

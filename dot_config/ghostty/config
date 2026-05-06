@@ -1,7 +1,12 @@
-command = /opt/homebrew/bin/tmux new-session -A -s main
+command = /opt/homebrew/bin/fish
 shell-integration = fish
 theme = tokyonight
 font-family = CaskaydiaCove Nerd Font
+macos-option-as-alt = true
+
+macos-titlebar-style = native
+cursor-style-blink = false
+mouse-hide-while-typing = true
 
 # Unbind Ghostty's default Cmd+number tab switching
 keybind = cmd+one=unbind
