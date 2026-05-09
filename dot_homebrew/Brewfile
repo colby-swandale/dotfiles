@@ -2,6 +2,7 @@ brew "fish"
 brew "dockutil"
 brew "btop"
 brew "mise"
+brew "libyaml" # required for mise to build Ruby (psych gem)
 brew "speedtest-cli"
 brew "starship"
 brew "postgresql@18"

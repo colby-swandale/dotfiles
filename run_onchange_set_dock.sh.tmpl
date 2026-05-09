@@ -1,6 +1,8 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 dockutil --no-restart --remove all
 dockutil --no-restart --add /Applications/Safari.app
 dockutil --no-restart --add /System/Applications/Mail.app
