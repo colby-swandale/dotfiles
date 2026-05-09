@@ -4,6 +4,13 @@
 
 # Install Homebrew if missing
 if [ ! -x /opt/homebrew/bin/brew ]; then
+  echo "Homebrew not found — installing. You'll be prompted for your sudo password."
+  sudo -v
+  # Refresh sudo credentials in the background so the installer's sudo -n calls
+  # don't outlive the default 5-minute cache
+  ( while true; do sudo -n true; sleep 60; kill -0 "$$" 2>/dev/null || exit; done ) &
+  KEEPALIVE_PID=$!
+  trap 'kill $KEEPALIVE_PID 2>/dev/null' EXIT
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
