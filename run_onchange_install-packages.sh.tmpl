@@ -1,7 +1,14 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
+# Brewfile hash: {{ include "dot_homebrew/Brewfile" | sha256sum }}
 
-# load homebrew into the current environment
+# Install Homebrew if missing
+if [ ! -x /opt/homebrew/bin/brew ]; then
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Load Homebrew into the current environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
-mise install
+
+brew bundle --global --no-upgrade
 {{ end -}}
